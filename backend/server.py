@@ -246,21 +246,46 @@ async def get_current_user(credentials: HTTPAuthorizationCredentials = Depends(s
 
 # ========== UPLOAD ROUTES ==========
 
+def optimize_image(file_path: Path, max_width: int = 1200, quality: int = 85):
+    """Optimize and compress image"""
+    try:
+        with Image.open(file_path) as img:
+            # Convert RGBA to RGB if necessary
+            if img.mode in ('RGBA', 'LA', 'P'):
+                background = Image.new('RGB', img.size, (255, 255, 255))
+                if img.mode == 'P':
+                    img = img.convert('RGBA')
+                background.paste(img, mask=img.split()[-1] if img.mode == 'RGBA' else None)
+                img = background
+            
+            # Resize if too large
+            if img.width > max_width:
+                ratio = max_width / img.width
+                new_height = int(img.height * ratio)
+                img = img.resize((max_width, new_height), Image.Resampling.LANCZOS)
+            
+            # Save optimized
+            img.save(file_path, 'JPEG', quality=quality, optimize=True)
+    except Exception as e:
+        logger.error(f"Image optimization failed: {e}")
+
 @api_router.post("/admin/upload")
 async def upload_file(
     file: UploadFile = File(...),
     current_user: User = Depends(get_current_user)
 ):
-    """Upload image file and return URL"""
+    """Upload and optimize image file, return URL"""
     try:
-        # Generate unique filename
-        file_extension = file.filename.split('.')[-1]
-        unique_filename = f"{uuid.uuid4()}.{file_extension}"
+        # Generate unique filename (always save as .jpg after optimization)
+        unique_filename = f"{uuid.uuid4()}.jpg"
         file_path = UPLOAD_DIR / unique_filename
         
-        # Save file
+        # Save file temporarily
         with open(file_path, "wb") as buffer:
             shutil.copyfileobj(file.file, buffer)
+        
+        # Optimize image
+        optimize_image(file_path)
         
         # Return URL
         file_url = f"/api/uploads/{unique_filename}"
