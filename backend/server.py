@@ -242,6 +242,30 @@ async def get_current_user(credentials: HTTPAuthorizationCredentials = Depends(s
         raise HTTPException(status_code=401, detail="User not found")
     return User(**user)
 
+# ========== UPLOAD ROUTES ==========
+
+@api_router.post("/admin/upload")
+async def upload_file(
+    file: UploadFile = File(...),
+    current_user: User = Depends(get_current_user)
+):
+    """Upload image file and return URL"""
+    try:
+        # Generate unique filename
+        file_extension = file.filename.split('.')[-1]
+        unique_filename = f"{uuid.uuid4()}.{file_extension}"
+        file_path = UPLOAD_DIR / unique_filename
+        
+        # Save file
+        with open(file_path, "wb") as buffer:
+            shutil.copyfileobj(file.file, buffer)
+        
+        # Return URL
+        file_url = f"/api/uploads/{unique_filename}"
+        return {"url": file_url, "filename": unique_filename}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
 # ========== AUTH ROUTES ==========
 
 @api_router.post("/auth/register", response_model=User)
