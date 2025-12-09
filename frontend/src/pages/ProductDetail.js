@@ -55,15 +55,62 @@ const ProductDetail = () => {
       {/* Split Screen Layout */}
       <div className="grid md:grid-cols-2 min-h-screen">
         {/* Left: Fixed Image */}
-        <div className="relative md:sticky md:top-0 h-screen bg-white">
-          <div className="h-full flex items-center justify-center p-12">
-            <img
-              src={product.image_url}
-              alt={product.name}
-              className="max-h-full max-w-full object-contain"
-              loading="lazy"
-              data-testid="product-image"
+        <div className="relative md:sticky md:top-0 h-screen overflow-hidden" style={{ background: 'linear-gradient(135deg, #F2EFE9 0%, #EAE7E2 50%, #DCD7C9 100%)' }}>
+          {/* Decorative Background Elements */}
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute top-10 left-10 w-64 h-64 rounded-full" style={{ background: 'radial-gradient(circle, #A27B5C 0%, transparent 70%)' }}></div>
+            <div className="absolute bottom-10 right-10 w-96 h-96 rounded-full" style={{ background: 'radial-gradient(circle, #2C3639 0%, transparent 70%)' }}></div>
+          </div>
+          
+          {/* Grain Texture */}
+          <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{ backgroundImage: 'url(https://grainy-gradients.vercel.app/noise.svg)' }}></div>
+          
+          {/* Logo Watermark */}
+          <div className="absolute top-8 left-8 opacity-10">
+            <img 
+              src="https://customer-assets.emergentagent.com/job_fragrant-isles/artifacts/01hjnpjn_LOGO_HKI__2_-removebg-preview.png" 
+              alt="Logo" 
+              className="h-20"
             />
+          </div>
+          
+          {/* Main Product Image Container */}
+          <div className="h-full flex flex-col items-center justify-center p-8 md:p-16 relative z-10">
+            {/* Product Info Badge */}
+            <div className="absolute top-8 right-8 bg-white/90 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg">
+              <p className="text-xs uppercase tracking-widest text-[#A27B5C] font-medium">{product.island_name}</p>
+            </div>
+            
+            {/* Product Image with Shadow */}
+            <div className="relative w-full max-w-md">
+              {/* Shadow effect */}
+              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3/4 h-8 bg-black/10 blur-2xl rounded-full"></div>
+              
+              {/* Main Image */}
+              <img
+                src={product.image_url}
+                alt={product.name}
+                className="relative w-full h-auto object-contain drop-shadow-2xl transform hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                data-testid="product-image"
+              />
+            </div>
+            
+            {/* Bottom Info */}
+            <div className="absolute bottom-8 left-0 right-0 px-8 md:px-16">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-xl">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-xs uppercase tracking-widest text-[#5C6B70] mb-1">Size</p>
+                    <p className="text-lg font-medium text-[#2C3639]">{product.size}</p>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-xs uppercase tracking-widest text-[#5C6B70] mb-1">Family</p>
+                    <p className="text-lg font-medium text-[#2C3639]">{product.olfactive_family}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
