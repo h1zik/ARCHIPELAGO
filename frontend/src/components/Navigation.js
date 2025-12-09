@@ -28,15 +28,12 @@ const Navigation = () => {
         <div className="container mx-auto px-6 md:px-12">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-3" data-testid="nav-logo">
+            <Link to="/" className="flex items-center" data-testid="nav-logo">
               <img 
                 src="https://customer-assets.emergentagent.com/job_fragrant-isles/artifacts/01hjnpjn_LOGO_HKI__2_-removebg-preview.png" 
                 alt="Archipelago Scent" 
-                className="h-12"
+                className="h-16"
               />
-              <span className="text-2xl font-bold hidden md:block" style={{ fontFamily: 'Cormorant Garamond, serif' }}>
-                Archipelago Scent
-              </span>
             </Link>
 
             {/* Desktop Navigation */}
