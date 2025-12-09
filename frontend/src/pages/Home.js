@@ -149,6 +149,7 @@ const Home = () => {
                     src={island.image_url}
                     alt={island.name}
                     className="w-full h-full object-cover"
+                    loading="lazy"
                   />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
