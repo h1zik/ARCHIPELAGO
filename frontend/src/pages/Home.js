@@ -79,8 +79,8 @@ const Home = () => {
         ))}
 
         {/* Hero Content */}
-        <div className="absolute inset-0 flex items-center justify-center text-center z-10">
-          <div className="container mx-auto px-6">
+        <div className="absolute inset-0 flex items-center justify-center text-center z-10 pt-20">
+          <div className="container mx-auto px-6 w-full">
             <h1
               className="text-5xl md:text-7xl text-white mb-6 fade-up"
               style={{ fontFamily: 'Cormorant Garamond, serif', fontWeight: 700, fontStyle: 'italic' }}
