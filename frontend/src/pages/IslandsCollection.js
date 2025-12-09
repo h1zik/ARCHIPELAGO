@@ -60,7 +60,7 @@ const IslandsCollection = () => {
                 key={island.id}
                 to={`/islands/${island.slug}`}
                 className="group"
-                data-testid={`island-item-${island.slug}`}
+                data-testid={`island-card-${island.slug}`}
               >
                 <div className="relative overflow-hidden aspect-[4/3] mb-6 image-zoom">
                   <img
