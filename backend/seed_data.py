@@ -158,7 +158,7 @@ products_data = [
         },
         "olfactive_family": "Aquatic Floral",
         "mood": "Deep, Tranquil",
-        "image_url": "https://images.unsplash.com/photo-1673555367446-f1b070325046?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "image_url": "https://customer-assets.emergentagent.com/job_fragrant-isles/artifacts/cw8vuegc_Artboard%201%20copy.png",
         "reviews": [],
         "created_at": "2025-01-01T00:00:00Z"
     },
@@ -218,7 +218,7 @@ products_data = [
         },
         "olfactive_family": "Floral Fruity",
         "mood": "Exotic, Paradise",
-        "image_url": "https://images.unsplash.com/photo-1673555367446-f1b070325046?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "image_url": "https://customer-assets.emergentagent.com/job_fragrant-isles/artifacts/cw8vuegc_Artboard%201%20copy.png",
         "reviews": [],
         "created_at": "2025-01-01T00:00:00Z"
     },
