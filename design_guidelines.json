@@ -1,0 +1,168 @@
+{
+  "brand_identity": {
+    "name": "Archipelago Scent",
+    "concept": "Olfactory Journey through Indonesia",
+    "tone": "Cinematic, Elegant, Immersive, Organic",
+    "archetype": "The Explorer / The Sage"
+  },
+  "typography": {
+    "headings": {
+      "family": "Cormorant Garamond, serif",
+      "weights": ["400", "600", "700"],
+      "usage": "All section titles, hero text, product names. Use italic variants for emphasis."
+    },
+    "body": {
+      "family": "Plus Jakarta Sans, sans-serif",
+      "weights": ["300", "400", "500"],
+      "usage": "UI elements, long-form text, navigation, buttons."
+    },
+    "scale": {
+      "h1": "text-5xl md:text-7xl tracking-tight leading-none",
+      "h2": "text-4xl md:text-5xl tracking-tight",
+      "h3": "text-2xl md:text-3xl font-light",
+      "body-lg": "text-lg md:text-xl leading-relaxed",
+      "body-base": "text-base leading-relaxed",
+      "caption": "text-sm tracking-widest uppercase"
+    }
+  },
+  "colors": {
+    "palette": {
+      "primary": "#2C3639",
+      "secondary": "#DCD7C9",
+      "accent": "#A27B5C",
+      "background": "#F2EFE9",
+      "surface": "#EAE7E2",
+      "text": "#2C3639",
+      "text-muted": "#5C6B70",
+      "border": "#D1CCC0"
+    },
+    "semantic": {
+      "success": "#5F7161",
+      "warning": "#D4AF37",
+      "error": "#9A3B3B",
+      "info": "#3F4E4F"
+    },
+    "gradients": {
+      "hero-overlay": "linear-gradient(to bottom, rgba(44,54,57,0.2), rgba(44,54,57,0.8))",
+      "gold-shimmer": "linear-gradient(45deg, #A27B5C, #D4AF37, #A27B5C)"
+    }
+  },
+  "visual_enhancers": {
+    "radius": {
+      "default": "0px",
+      "button": "9999px",
+      "card": "4px"
+    },
+    "shadows": {
+      "soft": "0 10px 40px -10px rgba(44,54,57,0.08)",
+      "hover": "0 20px 40px -10px rgba(44,54,57,0.15)"
+    },
+    "textures": {
+      "grain": "url('https://grainy-gradients.vercel.app/noise.svg')",
+      "paper": "Subtle paper texture overlay on background"
+    }
+  },
+  "layout_strategies": {
+    "container": "max-w-7xl mx-auto px-6 md:px-12",
+    "spacing": {
+      "section": "py-24 md:py-32",
+      "element": "gap-8"
+    },
+    "grid_system": {
+      "bento": "grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8",
+      "product_grid": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16"
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-primary text-secondary px-8 py-4 rounded-full hover:bg-primary/90 transition-all duration-300 hover:scale-105 font-medium tracking-wide",
+      "secondary": "border border-primary text-primary px-8 py-4 rounded-full hover:bg-primary hover:text-secondary transition-all duration-300",
+      "ghost": "text-primary hover:text-accent transition-colors underline-offset-4 hover:underline"
+    },
+    "cards": {
+      "story": "group relative overflow-hidden aspect-[3/4] cursor-pointer",
+      "product": "flex flex-col gap-4 group cursor-pointer"
+    },
+    "inputs": {
+      "default": "bg-transparent border-b border-primary/20 py-3 focus:border-primary outline-none transition-colors placeholder:text-primary/40"
+    }
+  },
+  "assets": {
+    "images": {
+      "hero": {
+        "url": "https://images.unsplash.com/photo-1637060548964-f064b88cd344?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "alt": "Aerial view of Indonesian Archipelago",
+        "category": "hero"
+      },
+      "islands": {
+        "komodo": {
+          "url": "https://images.unsplash.com/photo-1624336887379-da6b45b5f9ad?crop=entropy&cs=srgb&fm=jpg&q=85",
+          "alt": "Komodo Island Landscape",
+          "mood": "Prehistoric, Rugged"
+        },
+        "sumba": {
+          "url": "https://images.unsplash.com/photo-1664889050657-5ec9abd9ca00?crop=entropy&cs=srgb&fm=jpg&q=85",
+          "alt": "Sumba Landscape",
+          "mood": "Savanna, Wild"
+        },
+        "raja_ampat": {
+          "url": "https://images.unsplash.com/photo-1724227071836-8ca18287e2b7?crop=entropy&cs=srgb&fm=jpg&q=85",
+          "alt": "Raja Ampat Islands",
+          "mood": "Paradise, Marine"
+        },
+        "buton": {
+          "url": "https://images.unsplash.com/photo-1695632646657-2ca8100fd6ee?crop=entropy&cs=srgb&fm=jpg&q=85",
+          "alt": "Buton Forest",
+          "mood": "Mystical, Green"
+        },
+        "alor": {
+          "url": "https://images.unsplash.com/photo-1633064017654-7008f7460762?crop=entropy&cs=srgb&fm=jpg&q=85",
+          "alt": "Alor Coastline",
+          "mood": "Deep Blue, Traditional"
+        },
+        "nias": {
+          "url": "https://images.unsplash.com/photo-1567461006814-9dafe04668c6?crop=entropy&cs=srgb&fm=jpg&q=85",
+          "alt": "Nias Culture",
+          "mood": "Stone, Warrior"
+        }
+      },
+      "products": {
+        "collection_hero": "https://images.unsplash.com/photo-1720404219082-d4f6ee18b5b2?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "craftsmanship": "https://images.unsplash.com/photo-1709662369900-130507781728?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "floral_variant": "https://images.unsplash.com/photo-1673555367446-f1b070325046?crop=entropy&cs=srgb&fm=jpg&q=85"
+      }
+    }
+  },
+  "motion": {
+    "transitions": {
+      "default": "all 0.5s cubic-bezier(0.22, 1, 0.36, 1)",
+      "slow": "all 1.2s cubic-bezier(0.22, 1, 0.36, 1)"
+    },
+    "animations": {
+      "fade_up": {
+        "initial": { "opacity": 0, "y": 40 },
+        "animate": { "opacity": 1, "y": 0 },
+        "transition": { "duration": 0.8, "ease": "easeOut" }
+      },
+      "parallax": "Use framer-motion useScroll and useTransform for vertical parallax on images"
+    }
+  },
+  "instructions_to_main_agent": {
+    "general": "Build a 'Scrollytelling' experience. The user should feel like they are exploring a map. Use sticky positioning for text while images scroll or fade in background.",
+    "admin_panel": "Keep the admin panel clean and functional but use the brand fonts. Do not make it look like a generic dashboard. Use the 'Secondary' color for the sidebar.",
+    "quiz": "The quiz should be a full-screen immersive modal. One question per screen. Smooth transitions between questions.",
+    "product_page": "Do not use a standard e-commerce layout. Use a split-screen layout: Left side fixed image, Right side scrollable content (Story -> Notes -> Buy).",
+    "tech_stack_specifics": {
+      "styling": "Use Tailwind for layout and spacing. Use CSS modules or inline styles only for complex dynamic animations.",
+      "icons": "Use 'lucide-react' with thin stroke width (1.5px) to match the elegance.",
+      "state": "Use React Context for the Cart and Quiz state."
+    }
+  },
+  "universal_guidelines": [
+    "Do not use gradients for text.",
+    "Avoid pure black (#000000). Use the primary charcoal color.",
+    "Ensure all images have a subtle 'zoom-out' animation on load.",
+    "Use 'lenis' for smooth scrolling if possible, or CSS 'scroll-behavior: smooth'.",
+    "All interactive elements must have data-testid attributes."
+  ]
+}
