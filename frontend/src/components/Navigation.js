@@ -90,13 +90,13 @@ const Navigation = () => {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="md:hidden bg-[#F2EFE9] border-t border-[#D1CCC0]" data-testid="mobile-menu">
-            <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
+            <div className="container mx-auto px-6 py-8 flex flex-col gap-6">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-sm uppercase tracking-widest hover:text-[#A27B5C] transition-colors"
+                  className="text-base uppercase tracking-widest hover:text-[#A27B5C] transition-colors py-2 border-b border-[#D1CCC0]/30 last:border-0"
                   data-testid={`mobile-nav-link-${link.name.toLowerCase().replace(' ', '-')}`}
                 >
                   {link.name}
