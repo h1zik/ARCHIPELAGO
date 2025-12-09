@@ -5,7 +5,7 @@ const About = () => {
   return (
     <div className="min-h-screen bg-[#F2EFE9]" data-testid="about-page">
       {/* Hero */}
-      <section className="relative h-[60vh] overflow-hidden pt-20">
+      <section className="relative h-[60vh] overflow-hidden">
         <div className="absolute inset-0 image-zoom">
           <img
             src="https://images.unsplash.com/photo-1637060548964-f064b88cd344?crop=entropy&cs=srgb&fm=jpg&q=85"
