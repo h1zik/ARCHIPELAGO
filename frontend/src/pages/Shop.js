@@ -67,7 +67,7 @@ const Shop = () => {
   return (
     <div className="min-h-screen bg-[#F2EFE9]" data-testid="shop-page">
       {/* Header */}
-      <section className="section-padding bg-[#EAE7E2]">
+      <section className="section-padding bg-[#EAE7E2] pt-32">
         <div className="container mx-auto px-6 md:px-12 text-center">
           <h1
             className="text-5xl md:text-7xl mb-6"
