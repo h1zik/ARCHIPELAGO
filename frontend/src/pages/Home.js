@@ -54,7 +54,7 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen" data-testid="home-page">
+    <div className="min-h-screen -mt-32" data-testid="home-page">
       {/* Hero Section with Parallax Slideshow */}
       <section className="relative h-screen overflow-hidden" data-testid="hero-section">
         {/* Slideshow Images */}
