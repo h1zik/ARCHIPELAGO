@@ -38,6 +38,26 @@ const ManageIslands = () => {
     setEditData(null);
   };
 
+  const handleImageUpload = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const formData = new FormData();
+    formData.append('file', file);
+
+    try {
+      const response = await axios.post(`${API}/admin/upload`, formData, {
+        headers: { 'Content-Type': 'multipart/form-data' }
+      });
+      const fullUrl = `${process.env.REACT_APP_BACKEND_URL}${response.data.url}`;
+      setEditData({ ...editData, image_url: fullUrl });
+      toast.success('Image uploaded successfully');
+    } catch (error) {
+      console.error('Failed to upload image:', error);
+      toast.error('Failed to upload image');
+    }
+  };
+
   const handleSave = async () => {
     try {
       await axios.put(`${API}/admin/islands/${editingId}`, {
