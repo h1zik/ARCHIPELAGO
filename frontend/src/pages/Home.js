@@ -214,7 +214,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-[#2C3639] text-white" data-testid="cta-section">
+      <section className="py-20 bg-[#2C3639] text-white" data-testid="cta-section">
         <div className="container mx-auto px-6 md:px-12 text-center">
           <h2
             className="text-4xl md:text-5xl mb-6"
