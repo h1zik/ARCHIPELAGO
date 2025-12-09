@@ -35,12 +35,11 @@ const AdminLayout = ({ children }) => {
       {/* Sidebar */}
       <aside className="w-64 bg-[#DCD7C9] min-h-screen p-6 flex flex-col">
         <div className="mb-8">
-          <h2
-            className="text-2xl mb-2"
-            style={{ fontFamily: 'Cormorant Garamond, serif' }}
-          >
-            Archipelago
-          </h2>
+          <img 
+            src="https://customer-assets.emergentagent.com/job_fragrant-isles/artifacts/01hjnpjn_LOGO_HKI__2_-removebg-preview.png" 
+            alt="Archipelago Scent" 
+            className="h-16 mb-2"
+          />
           <p className="text-sm text-[#5C6B70]">Admin Panel</p>
         </div>
 
