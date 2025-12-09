@@ -49,6 +49,29 @@ const ManageProducts = () => {
     }
   };
 
+  const handleImageUpload = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    setUploadingImage(true);
+    const formDataUpload = new FormData();
+    formDataUpload.append('file', file);
+
+    try {
+      const response = await axios.post(`${API}/admin/upload`, formDataUpload, {
+        headers: { 'Content-Type': 'multipart/form-data' }
+      });
+      const fullUrl = `${process.env.REACT_APP_BACKEND_URL}${response.data.url}`;
+      setFormData({ ...formData, image_url: fullUrl });
+      toast.success('Image uploaded successfully');
+    } catch (error) {
+      console.error('Failed to upload image:', error);
+      toast.error('Failed to upload image');
+    } finally {
+      setUploadingImage(false);
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     
