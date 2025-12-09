@@ -1,53 +1,97 @@
-import { useEffect } from "react";
-import "@/App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import axios from "axios";
+import React from 'react';
+import './App.css';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { AuthProvider, useAuth } from './contexts/AuthContext';
+import { CartProvider } from './contexts/CartContext';
+import { Toaster } from './components/ui/sonner';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+// Public Pages
+import Navigation from './components/Navigation';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import IslandsCollection from './pages/IslandsCollection';
+import IslandStory from './pages/IslandStory';
+import Shop from './pages/Shop';
+import ProductDetail from './pages/ProductDetail';
+import DiscoverySet from './pages/DiscoverySet';
+import About from './pages/About';
+import Support from './pages/Support';
+import Checkout from './pages/Checkout';
 
-const Home = () => {
-  const helloWorldApi = async () => {
-    try {
-      const response = await axios.get(`${API}/`);
-      console.log(response.data.message);
-    } catch (e) {
-      console.error(e, `errored out requesting / api`);
-    }
-  };
+// Admin Pages
+import AdminLogin from './pages/admin/AdminLogin';
+import AdminDashboard from './pages/admin/AdminDashboard';
+import ManageIslands from './pages/admin/ManageIslands';
+import ManageProducts from './pages/admin/ManageProducts';
 
-  useEffect(() => {
-    helloWorldApi();
-  }, []);
+const PrivateRoute = ({ children }) => {
+  const { isAuthenticated, loading } = useAuth();
 
-  return (
-    <div>
-      <header className="App-header">
-        <a
-          className="App-link"
-          href="https://emergent.sh"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4" />
-        </a>
-        <p className="mt-5">Building something incredible ~!</p>
-      </header>
-    </div>
-  );
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="spinner"></div>
+      </div>
+    );
+  }
+
+  return isAuthenticated ? children : <Navigate to="/admin/login" />;
 };
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <AuthProvider>
+      <CartProvider>
+        <BrowserRouter>
+          <div className="App">
+            <Routes>
+              {/* Public Routes */}
+              <Route path="/" element={<><Navigation /><Home /><Footer /></>} />
+              <Route path="/islands" element={<><Navigation /><IslandsCollection /><Footer /></>} />
+              <Route path="/islands/:slug" element={<><Navigation /><IslandStory /><Footer /></>} />
+              <Route path="/shop" element={<><Navigation /><Shop /><Footer /></>} />
+              <Route path="/products/:id" element={<><Navigation /><ProductDetail /><Footer /></>} />
+              <Route path="/discovery-set" element={<><Navigation /><DiscoverySet /><Footer /></>} />
+              <Route path="/about" element={<><Navigation /><About /><Footer /></>} />
+              <Route path="/support" element={<><Navigation /><Support /><Footer /></>} />
+              <Route path="/checkout" element={<><Navigation /><Checkout /><Footer /></>} />
+
+              {/* Admin Routes */}
+              <Route path="/admin/login" element={<AdminLogin />} />
+              <Route
+                path="/admin/dashboard"
+                element={
+                  <PrivateRoute>
+                    <AdminDashboard />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="/admin/islands"
+                element={
+                  <PrivateRoute>
+                    <ManageIslands />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="/admin/products"
+                element={
+                  <PrivateRoute>
+                    <ManageProducts />
+                  </PrivateRoute>
+                }
+              />
+              <Route path="/admin/*" element={<Navigate to="/admin/dashboard" />} />
+
+              {/* Fallback */}
+              <Route path="*" element={<Navigate to="/" />} />
+            </Routes>
+            <Toaster position="top-right" />
+          </div>
+        </BrowserRouter>
+      </CartProvider>
+    </AuthProvider>
   );
 }
 
