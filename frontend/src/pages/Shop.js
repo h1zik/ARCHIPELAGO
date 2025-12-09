@@ -179,6 +179,7 @@ const Shop = () => {
                       src={product.image_url}
                       alt={product.name}
                       className="w-full h-full object-cover"
+                      loading="lazy"
                     />
                   </div>
                   <div className="text-center">
