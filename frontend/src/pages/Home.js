@@ -56,7 +56,7 @@ const Home = () => {
   return (
     <div className="min-h-screen" data-testid="home-page">
       {/* Hero Section with Parallax Slideshow */}
-      <section className="relative h-screen overflow-hidden" data-testid="hero-section">
+      <section className="relative h-screen overflow-hidden pt-20" data-testid="hero-section">
         {/* Slideshow Images */}
         {heroImages.map((img, index) => (
           <div
