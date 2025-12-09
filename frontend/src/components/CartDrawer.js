@@ -18,13 +18,13 @@ const CartDrawer = ({ isOpen, onClose }) => {
     <>
       {/* Overlay */}
       <div
-        className="fixed inset-0 bg-black/50 z-50"
+        className="fixed inset-0 bg-black/50 z-[60]"
         onClick={onClose}
         data-testid="cart-overlay"
       ></div>
 
       {/* Drawer */}
-      <div className="fixed right-0 top-0 h-full w-full md:w-96 bg-[#F2EFE9] z-50 shadow-2xl flex flex-col" data-testid="cart-drawer">
+      <div className="fixed right-0 top-0 h-full w-full md:w-96 bg-[#F2EFE9] z-[60] shadow-2xl flex flex-col" data-testid="cart-drawer">
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-[#D1CCC0]">
           <h2 className="text-2xl" style={{ fontFamily: 'Cormorant Garamond, serif' }}>Your Cart</h2>
