@@ -100,7 +100,7 @@ const Home = () => {
                 <Sparkles size={20} />
                 Discover Your Island
               </button>
-              <Link to="/shop" className="btn-secondary" data-testid="hero-shop-button">
+              <Link to="/shop" className="px-8 py-4 rounded-full bg-white/10 backdrop-blur-sm border border-white/30 text-white hover:bg-white hover:text-[#2C3639] transition-all duration-300 font-medium tracking-wide" data-testid="hero-shop-button">
                 Explore Collection
               </Link>
             </div>
