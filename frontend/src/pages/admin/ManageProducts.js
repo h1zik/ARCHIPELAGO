@@ -28,6 +28,7 @@ const ManageProducts = () => {
   };
 
   const [formData, setFormData] = useState(emptyProduct);
+  const [uploadingImage, setUploadingImage] = useState(false);
 
   useEffect(() => {
     fetchData();
