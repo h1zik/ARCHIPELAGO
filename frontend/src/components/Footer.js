@@ -9,21 +9,23 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-3xl mb-4" style={{ fontFamily: 'Cormorant Garamond, serif' }}>
-              Archipelago Scent
-            </h3>
-            <p className="text-sm leading-relaxed text-[#DCD7C9]/80 max-w-md">
+            <img 
+              src="https://customer-assets.emergentagent.com/job_fragrant-isles/artifacts/01hjnpjn_LOGO_HKI__2_-removebg-preview.png" 
+              alt="Archipelago Scent" 
+              className="h-12 mb-4"
+            />
+            <p className="text-sm leading-relaxed text-[#DCD7C9]/80 max-w-md mb-6">
               Perjalanan olfaktori melalui enam pulau Indonesia. Setiap aroma adalah cerita, setiap botol adalah kenangan.
             </p>
-            <div className="flex gap-4 mt-6">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#A27B5C] transition-colors" data-testid="footer-instagram">
-                <Instagram size={20} strokeWidth={1.5} />
+            <div className="flex gap-4">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[#DCD7C9]/10 hover:bg-[#A27B5C] flex items-center justify-center transition-all" data-testid="footer-instagram">
+                <Instagram size={18} strokeWidth={1.5} />
               </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#A27B5C] transition-colors" data-testid="footer-facebook">
-                <Facebook size={20} strokeWidth={1.5} />
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[#DCD7C9]/10 hover:bg-[#A27B5C] flex items-center justify-center transition-all" data-testid="footer-facebook">
+                <Facebook size={18} strokeWidth={1.5} />
               </a>
-              <a href="mailto:hello@archipelagoscent.com" className="hover:text-[#A27B5C] transition-colors" data-testid="footer-email">
-                <Mail size={20} strokeWidth={1.5} />
+              <a href="mailto:hello@archipelagoscent.com" className="w-10 h-10 rounded-full bg-[#DCD7C9]/10 hover:bg-[#A27B5C] flex items-center justify-center transition-all" data-testid="footer-email">
+                <Mail size={18} strokeWidth={1.5} />
               </a>
             </div>
           </div>
