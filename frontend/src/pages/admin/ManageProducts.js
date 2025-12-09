@@ -326,15 +326,32 @@ const ManageProducts = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm uppercase tracking-widest mb-2 font-medium">Image URL *</label>
-                  <input
-                    type="url"
-                    value={formData.image_url}
-                    onChange={(e) => setFormData({ ...formData, image_url: e.target.value })}
-                    required
-                    className="w-full p-3 border border-[#D1CCC0] rounded focus:border-[#A27B5C] outline-none"
-                    data-testid="input-image-url"
-                  />
+                  <label className="block text-sm uppercase tracking-widest mb-2 font-medium">Product Image *</label>
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3">
+                      <input
+                        type="file"
+                        accept="image/*"
+                        onChange={handleImageUpload}
+                        disabled={uploadingImage}
+                        className="block w-full text-sm text-[#5C6B70] file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-[#A27B5C] file:text-white hover:file:bg-[#8B6A4D] file:cursor-pointer disabled:opacity-50"
+                        data-testid="input-image-file"
+                      />
+                      {uploadingImage && <span className="text-sm text-[#5C6B70]">Uploading...</span>}
+                    </div>
+                    <input
+                      type="url"
+                      value={formData.image_url}
+                      onChange={(e) => setFormData({ ...formData, image_url: e.target.value })}
+                      placeholder="Or paste image URL"
+                      required
+                      className="w-full p-3 border border-[#D1CCC0] rounded focus:border-[#A27B5C] outline-none"
+                      data-testid="input-image-url"
+                    />
+                    {formData.image_url && (
+                      <img src={formData.image_url} alt="Preview" className="w-32 h-32 object-cover rounded" />
+                    )}
+                  </div>
                 </div>
 
                 <div className="flex justify-end gap-3 pt-4">
