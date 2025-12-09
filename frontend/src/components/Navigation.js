@@ -108,7 +108,7 @@ const Navigation = () => {
       </nav>
 
       {/* Spacer */}
-      <div className="h-20"></div>
+      <div className="h-32"></div>
 
       {/* Cart Drawer */}
       <CartDrawer isOpen={cartOpen} onClose={() => setCartOpen(false)} />
