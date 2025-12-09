@@ -4,7 +4,7 @@ import { Instagram, Facebook, Mail } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#2C3639] text-[#DCD7C9] mt-24" data-testid="footer">
+    <footer className="bg-[#2C3639] text-[#DCD7C9]" data-testid="footer">
       <div className="container mx-auto px-6 md:px-12 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand */}
