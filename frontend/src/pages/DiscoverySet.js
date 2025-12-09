@@ -51,7 +51,7 @@ const DiscoverySet = () => {
   return (
     <div className="min-h-screen bg-[#F2EFE9]" data-testid="discovery-set-page">
       {/* Hero */}
-      <section className="section-padding bg-[#EAE7E2]">
+      <section className="section-padding bg-[#EAE7E2] pt-32">
         <div className="container mx-auto px-6 md:px-12">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
