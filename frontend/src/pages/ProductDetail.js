@@ -61,6 +61,7 @@ const ProductDetail = () => {
               src={product.image_url}
               alt={product.name}
               className="max-h-full max-w-full object-contain"
+              loading="lazy"
               data-testid="product-image"
             />
           </div>
