@@ -183,20 +183,38 @@ const ManageIslands = () => {
 
                   <div>
                     <label className="block text-sm uppercase tracking-widest mb-2 font-medium">
-                      Image URL
+                      Image
                     </label>
                     {isEditing ? (
-                      <input
-                        type="url"
-                        value={data.image_url}
-                        onChange={(e) => setEditData({ ...editData, image_url: e.target.value })}
-                        className="w-full p-3 border border-[#D1CCC0] rounded focus:border-[#A27B5C] outline-none"
-                        data-testid={`input-image-${island.slug}`}
-                      />
+                      <div className="space-y-3">
+                        <div className="flex items-center gap-3">
+                          <input
+                            type="file"
+                            accept="image/*"
+                            onChange={handleImageUpload}
+                            className="block w-full text-sm text-[#5C6B70] file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-[#A27B5C] file:text-white hover:file:bg-[#8B6A4D] file:cursor-pointer"
+                            data-testid={`input-image-file-${island.slug}`}
+                          />
+                        </div>
+                        <input
+                          type="url"
+                          value={data.image_url}
+                          onChange={(e) => setEditData({ ...editData, image_url: e.target.value })}
+                          placeholder="Or paste image URL"
+                          className="w-full p-3 border border-[#D1CCC0] rounded focus:border-[#A27B5C] outline-none"
+                          data-testid={`input-image-url-${island.slug}`}
+                        />
+                        {data.image_url && (
+                          <img src={data.image_url} alt="Preview" className="w-32 h-32 object-cover rounded" />
+                        )}
+                      </div>
                     ) : (
-                      <a href={data.image_url} target="_blank" rel="noopener noreferrer" className="text-[#A27B5C] hover:underline text-sm">
-                        {data.image_url}
-                      </a>
+                      <div className="flex items-center gap-3">
+                        <img src={data.image_url} alt={island.name} className="w-20 h-20 object-cover rounded" />
+                        <a href={data.image_url} target="_blank" rel="noopener noreferrer" className="text-[#A27B5C] hover:underline text-sm">
+                          View Image
+                        </a>
+                      </div>
                     )}
                   </div>
 
