@@ -32,23 +32,23 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-sm uppercase tracking-widest mb-4 font-medium">Explore</h4>
-            <ul className="space-y-2 text-sm">
-              <li><Link to="/islands" className="hover:text-[#A27B5C] transition-colors" data-testid="footer-link-islands">Islands</Link></li>
-              <li><Link to="/shop" className="hover:text-[#A27B5C] transition-colors" data-testid="footer-link-shop">Shop</Link></li>
-              <li><Link to="/discovery-set" className="hover:text-[#A27B5C] transition-colors" data-testid="footer-link-discovery">Discovery Set</Link></li>
-              <li><Link to="/about" className="hover:text-[#A27B5C] transition-colors" data-testid="footer-link-about">About</Link></li>
+            <h4 className="text-sm uppercase tracking-widest mb-6 font-medium text-[#DCD7C9]">Explore</h4>
+            <ul className="space-y-3 text-sm">
+              <li><Link to="/islands" className="text-[#DCD7C9]/80 hover:text-[#A27B5C] transition-colors" data-testid="footer-link-islands">Islands</Link></li>
+              <li><Link to="/shop" className="text-[#DCD7C9]/80 hover:text-[#A27B5C] transition-colors" data-testid="footer-link-shop">Shop</Link></li>
+              <li><Link to="/discovery-set" className="text-[#DCD7C9]/80 hover:text-[#A27B5C] transition-colors" data-testid="footer-link-discovery">Discovery Set</Link></li>
+              <li><Link to="/about" className="text-[#DCD7C9]/80 hover:text-[#A27B5C] transition-colors" data-testid="footer-link-about">About</Link></li>
             </ul>
           </div>
 
           {/* Support */}
           <div>
-            <h4 className="text-sm uppercase tracking-widest mb-4 font-medium">Support</h4>
-            <ul className="space-y-2 text-sm">
-              <li><Link to="/support" className="hover:text-[#A27B5C] transition-colors" data-testid="footer-link-faq">FAQ</Link></li>
-              <li><Link to="/support" className="hover:text-[#A27B5C] transition-colors" data-testid="footer-link-contact">Contact</Link></li>
-              <li><Link to="/support" className="hover:text-[#A27B5C] transition-colors" data-testid="footer-link-shipping">Shipping</Link></li>
-              <li><Link to="/support" className="hover:text-[#A27B5C] transition-colors" data-testid="footer-link-returns">Returns</Link></li>
+            <h4 className="text-sm uppercase tracking-widest mb-6 font-medium text-[#DCD7C9]">Support</h4>
+            <ul className="space-y-3 text-sm">
+              <li><Link to="/support" className="text-[#DCD7C9]/80 hover:text-[#A27B5C] transition-colors" data-testid="footer-link-faq">FAQ</Link></li>
+              <li><Link to="/support" className="text-[#DCD7C9]/80 hover:text-[#A27B5C] transition-colors" data-testid="footer-link-contact">Contact</Link></li>
+              <li><Link to="/support" className="text-[#DCD7C9]/80 hover:text-[#A27B5C] transition-colors" data-testid="footer-link-shipping">Shipping</Link></li>
+              <li><Link to="/support" className="text-[#DCD7C9]/80 hover:text-[#A27B5C] transition-colors" data-testid="footer-link-returns">Returns</Link></li>
             </ul>
           </div>
         </div>
