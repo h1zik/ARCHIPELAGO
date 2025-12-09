@@ -14,7 +14,7 @@ const About = () => {
           />
         </div>
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(44,54,57,0.4), rgba(44,54,57,0.8))' }}></div>
-        <div className="absolute inset-0 flex items-center justify-center text-center z-10">
+        <div className="absolute inset-0 flex items-center justify-center text-center z-10 pt-20">
           <div className="container mx-auto px-6">
             <h1
               className="text-5xl md:text-7xl text-white mb-6"
