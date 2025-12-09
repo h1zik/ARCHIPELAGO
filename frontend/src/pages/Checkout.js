@@ -79,7 +79,7 @@ const Checkout = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#F2EFE9] section-padding" data-testid="checkout-page">
+    <div className="min-h-screen bg-[#F2EFE9] pt-32 pb-20" data-testid="checkout-page">
       <div className="container mx-auto px-6 md:px-12 max-w-6xl">
         <h1
           className="text-4xl md:text-5xl mb-12 text-center"
