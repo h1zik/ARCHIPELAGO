@@ -138,7 +138,7 @@ products_data = [
         },
         "olfactive_family": "Oriental Spicy",
         "mood": "Warm, Free",
-        "image_url": "https://images.unsplash.com/photo-1709662369900-130507781728?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "image_url": "https://customer-assets.emergentagent.com/job_fragrant-isles/artifacts/bxew3p1b_Artboard%201%20copy%202.png",
         "reviews": [],
         "created_at": "2025-01-01T00:00:00Z"
     },
@@ -198,7 +198,7 @@ products_data = [
         },
         "olfactive_family": "Tropical Floral",
         "mood": "Warm, Sacred",
-        "image_url": "https://images.unsplash.com/photo-1709662369900-130507781728?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "image_url": "https://customer-assets.emergentagent.com/job_fragrant-isles/artifacts/bxew3p1b_Artboard%201%20copy%202.png",
         "reviews": [],
         "created_at": "2025-01-01T00:00:00Z"
     },
@@ -238,7 +238,7 @@ products_data = [
         },
         "olfactive_family": "Discovery Set",
         "mood": "Exploratory",
-        "image_url": "https://images.unsplash.com/photo-1709662369900-130507781728?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "image_url": "https://customer-assets.emergentagent.com/job_fragrant-isles/artifacts/bxew3p1b_Artboard%201%20copy%202.png",
         "reviews": [],
         "created_at": "2025-01-01T00:00:00Z"
     }
