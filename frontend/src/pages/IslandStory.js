@@ -50,7 +50,7 @@ const IslandStory = () => {
   return (
     <div className="min-h-screen bg-[#F2EFE9]" data-testid="island-story-page">
       {/* Hero Section */}
-      <section className="relative h-screen overflow-hidden" data-testid="island-hero">
+      <section className="relative h-screen overflow-hidden pt-20" data-testid="island-hero">
         <div className="absolute inset-0 image-zoom">
           <img
             src={island.image_url}
