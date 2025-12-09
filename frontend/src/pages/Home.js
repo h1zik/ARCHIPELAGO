@@ -68,6 +68,7 @@ const Home = () => {
               src={img}
               alt={`Hero ${index + 1}`}
               className="w-full h-full object-cover transform scale-110"
+              loading={index === 0 ? 'eager' : 'lazy'}
               style={{
                 transform: currentSlide === index ? 'scale(1)' : 'scale(1.1)',
                 transition: 'transform 5s ease-out'
