@@ -122,21 +122,35 @@ const ManageIslands = () => {
                 data-testid={`island-card-${island.slug}`}
               >
                 <div className="flex items-start justify-between mb-4">
-                  <h2
-                    className="text-2xl"
-                    style={{ fontFamily: 'Cormorant Garamond, serif' }}
-                  >
-                    {island.name}
-                  </h2>
-                  {!isEditing ? (
-                    <button
-                      onClick={() => handleEdit(island)}
-                      className="flex items-center gap-2 px-4 py-2 bg-[#A27B5C] text-white rounded hover:bg-[#8B6A4D] transition-colors"
-                      data-testid={`edit-button-${island.slug}`}
+                  <div className="flex items-center gap-4">
+                    <h2
+                      className="text-2xl"
+                      style={{ fontFamily: 'Cormorant Garamond, serif' }}
                     >
-                      <Edit size={16} />
-                      Edit
-                    </button>
+                      {island.name}
+                    </h2>
+                    <span className={`px-3 py-1 rounded-full text-xs uppercase tracking-wide ${island.visible ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'}`}>
+                      {island.visible ? 'Visible' : 'Hidden'}
+                    </span>
+                  </div>
+                  {!isEditing ? (
+                    <div className="flex gap-2">
+                      <button
+                        onClick={() => toggleVisibility(island.id, island.visible)}
+                        className={`flex items-center gap-2 px-4 py-2 rounded transition-colors ${island.visible ? 'bg-gray-500 text-white hover:bg-gray-600' : 'bg-green-500 text-white hover:bg-green-600'}`}
+                        data-testid={`toggle-visibility-${island.slug}`}
+                      >
+                        {island.visible ? 'Hide' : 'Show'}
+                      </button>
+                      <button
+                        onClick={() => handleEdit(island)}
+                        className="flex items-center gap-2 px-4 py-2 bg-[#A27B5C] text-white rounded hover:bg-[#8B6A4D] transition-colors"
+                        data-testid={`edit-button-${island.slug}`}
+                      >
+                        <Edit size={16} />
+                        Edit
+                      </button>
+                    </div>
                   ) : (
                     <div className="flex gap-2">
                       <button
