@@ -181,6 +181,7 @@ const ManageProducts = () => {
                 <th className="text-left p-4 text-sm uppercase tracking-widest">Island</th>
                 <th className="text-left p-4 text-sm uppercase tracking-widest">Price</th>
                 <th className="text-left p-4 text-sm uppercase tracking-widest">Stock</th>
+                <th className="text-left p-4 text-sm uppercase tracking-widest">Status</th>
                 <th className="text-right p-4 text-sm uppercase tracking-widest">Actions</th>
               </tr>
             </thead>
