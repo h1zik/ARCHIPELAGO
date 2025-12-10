@@ -37,7 +37,7 @@ const ManageProducts = () => {
   const fetchData = async () => {
     try {
       const [productsRes, islandsRes] = await Promise.all([
-        axios.get(`${API}/products`),
+        axios.get(`${API}/admin/products`),
         axios.get(`${API}/islands`)
       ]);
       setProducts(productsRes.data);
@@ -46,6 +46,19 @@ const ManageProducts = () => {
       console.error('Failed to fetch data:', error);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const toggleVisibility = async (productId, currentVisibility) => {
+    try {
+      await axios.put(`${API}/admin/products/${productId}`, {
+        visible: !currentVisibility
+      });
+      toast.success('Visibility updated');
+      fetchData();
+    } catch (error) {
+      console.error('Failed to update visibility:', error);
+      toast.error('Failed to update visibility');
     }
   };
 
