@@ -334,6 +334,16 @@ async def get_me(current_user: User = Depends(get_current_user)):
 
 @api_router.get("/islands", response_model=List[Island])
 async def get_islands():
+    # Public endpoint - only show visible islands
+    islands = await db.islands.find({"visible": {"$ne": False}}, {"_id": 0}).to_list(100)
+    for island in islands:
+        if isinstance(island.get("created_at"), str):
+            island["created_at"] = datetime.fromisoformat(island["created_at"])
+    return islands
+
+@api_router.get("/admin/islands", response_model=List[Island])
+async def get_all_islands_admin(current_user: User = Depends(get_current_user)):
+    # Admin endpoint - show all islands including hidden
     islands = await db.islands.find({}, {"_id": 0}).to_list(100)
     for island in islands:
         if isinstance(island.get("created_at"), str):
