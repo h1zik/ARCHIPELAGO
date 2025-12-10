@@ -86,6 +86,7 @@ class IslandUpdate(BaseModel):
     mood: Optional[str] = None
     aroma_notes: Optional[AromaNotes] = None
     image_url: Optional[str] = None
+    visible: Optional[bool] = None
 
 class Review(BaseModel):
     reviewer_name: str
