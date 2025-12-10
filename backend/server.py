@@ -135,6 +135,7 @@ class ProductUpdate(BaseModel):
     olfactive_family: Optional[str] = None
     mood: Optional[str] = None
     image_url: Optional[str] = None
+    visible: Optional[bool] = None
 
 class QuizOption(BaseModel):
     text: str
