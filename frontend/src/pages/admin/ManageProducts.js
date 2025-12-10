@@ -201,7 +201,20 @@ const ManageProducts = () => {
                   <td className="p-4">Rp {product.price.toLocaleString('id-ID')}</td>
                   <td className="p-4">{product.stock}</td>
                   <td className="p-4">
+                    <span className={`px-3 py-1 rounded-full text-xs uppercase tracking-wide ${product.visible ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'}`}>
+                      {product.visible ? 'Visible' : 'Hidden'}
+                    </span>
+                  </td>
+                  <td className="p-4">
                     <div className="flex justify-end gap-2">
+                      <button
+                        onClick={() => toggleVisibility(product.id, product.visible)}
+                        className={`p-2 rounded transition-colors ${product.visible ? 'hover:bg-gray-100 text-gray-600' : 'hover:bg-green-100 text-green-600'}`}
+                        title={product.visible ? 'Hide' : 'Show'}
+                        data-testid={`toggle-visibility-${product.id}`}
+                      >
+                        {product.visible ? '👁️' : '🚫'}
+                      </button>
                       <button
                         onClick={() => openModal(product)}
                         className="p-2 hover:bg-[#EAE7E2] rounded transition-colors"
