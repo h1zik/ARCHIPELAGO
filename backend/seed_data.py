@@ -120,6 +120,7 @@ products_data = [
         "olfactive_family": "Woody Aromatic",
         "mood": "Mystical, Grounded",
         "image_url": "https://customer-assets.emergentagent.com/job_fragrant-isles/artifacts/y6oiucty_Artboard%201.png",
+        "visible": True,
         "reviews": [],
         "created_at": "2025-01-01T00:00:00Z"
     },
@@ -180,6 +181,7 @@ products_data = [
         "olfactive_family": "Leather Oud",
         "mood": "Powerful, Raw",
         "image_url": "https://customer-assets.emergentagent.com/job_fragrant-isles/artifacts/y6oiucty_Artboard%201.png",
+        "visible": True,
         "reviews": [],
         "created_at": "2025-01-01T00:00:00Z"
     },
