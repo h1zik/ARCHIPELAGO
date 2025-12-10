@@ -108,6 +108,7 @@ class Product(BaseModel):
     olfactive_family: str
     mood: str
     image_url: str
+    visible: bool = True
     reviews: List[Review] = []
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
