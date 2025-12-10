@@ -85,6 +85,30 @@ function App() {
                   </PrivateRoute>
                 }
               />
+              <Route
+                path="/admin/orders"
+                element={
+                  <PrivateRoute>
+                    <ManageOrders />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="/admin/quiz"
+                element={
+                  <PrivateRoute>
+                    <ManageQuiz />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="/admin/theme"
+                element={
+                  <PrivateRoute>
+                    <ThemeSettings />
+                  </PrivateRoute>
+                }
+              />
               <Route path="/admin/*" element={<Navigate to="/admin/dashboard" />} />
 
               {/* Fallback */}
