@@ -23,6 +23,9 @@ import AdminLogin from './pages/admin/AdminLogin';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import ManageIslands from './pages/admin/ManageIslands';
 import ManageProducts from './pages/admin/ManageProducts';
+import ManageOrders from './pages/admin/ManageOrders';
+import ManageQuiz from './pages/admin/ManageQuiz';
+import ThemeSettings from './pages/admin/ThemeSettings';
 
 const PrivateRoute = ({ children }) => {
   const { isAuthenticated, loading } = useAuth();
