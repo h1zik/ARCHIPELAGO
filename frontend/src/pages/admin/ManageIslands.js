@@ -18,13 +18,26 @@ const ManageIslands = () => {
 
   const fetchIslands = async () => {
     try {
-      const response = await axios.get(`${API}/islands`);
+      const response = await axios.get(`${API}/admin/islands`);
       setIslands(response.data);
     } catch (error) {
       console.error('Failed to fetch islands:', error);
       toast.error('Failed to load islands');
     } finally {
       setLoading(false);
+    }
+  };
+
+  const toggleVisibility = async (islandId, currentVisibility) => {
+    try {
+      await axios.put(`${API}/admin/islands/${islandId}`, {
+        visible: !currentVisibility
+      });
+      toast.success('Visibility updated');
+      fetchIslands();
+    } catch (error) {
+      console.error('Failed to update visibility:', error);
+      toast.error('Failed to update visibility');
     }
   };
 
