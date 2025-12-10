@@ -386,7 +386,8 @@ async def get_products(
     mood: Optional[str] = None,
     olfactive_family: Optional[str] = None
 ):
-    query = {}
+    # Public endpoint - only show visible products
+    query = {"visible": {"$ne": False}}
     if island_id:
         query["island_id"] = island_id
     if mood:
@@ -395,6 +396,18 @@ async def get_products(
         query["olfactive_family"] = olfactive_family
     
     products = await db.products.find(query, {"_id": 0}).to_list(100)
+    for product in products:
+        if isinstance(product.get("created_at"), str):
+            product["created_at"] = datetime.fromisoformat(product["created_at"])
+        for review in product.get("reviews", []):
+            if isinstance(review.get("date"), str):
+                review["date"] = datetime.fromisoformat(review["date"])
+    return products
+
+@api_router.get("/admin/products", response_model=List[Product])
+async def get_all_products_admin(current_user: User = Depends(get_current_user)):
+    # Admin endpoint - show all products including hidden
+    products = await db.products.find({}, {"_id": 0}).to_list(100)
     for product in products:
         if isinstance(product.get("created_at"), str):
             product["created_at"] = datetime.fromisoformat(product["created_at"])
