@@ -26,6 +26,7 @@ islands_data = [
             "base": ["Patchouli", "Amber", "Musk"]
         },
         "image_url": "https://images.unsplash.com/photo-1695632646657-2ca8100fd6ee?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "visible": True,
         "created_at": "2025-01-01T00:00:00Z"
     },
     {
